@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>akoc1</title>
+</head>
+
+<body>
+    <div id="root">
+
+            <header class="header">
+                <div class="profile" onclick="location.href='#';" style="cursor: pointer;">
+                    <img style="border-radius: 50%; margin-right: 16px;" src="https://avatars.githubusercontent.com/u/72667213?v=4" width="48"/>
+                    <h1>akoc1</h1>
+                </div>
+
+                <div class="topnav" id="myTopnav">
+                    <a href="#skills">Skills</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a href="javascript:void(0);" class="icon" style="display: none;" onclick="toggleMenu()">
+                        &#9776;
+                    </a>
+                </div>
+
+                <script>
+                    function toggleMenu() {
+                        var x = document.getElementById("myTopnav");
+                        if (x.className === "topnav") {
+                            x.className += " responsive";
+                        } else {
+                            x.className = "topnav";
+                        }
+                    }
+                </script>
+            </header>
+            
+        <div>
+            <div class="info-cont">
+                <h1>Hello world, I'm akoc1!</h1>
+                <p>A passionate <label class="fancy-text-dev">Full Stack Software</label> and <label class="fancy-text-game">Game Developer</label></p>
+                
+                <button class="button-fancy">Download My Resume</button>
+                <button class="button-fancy" onclick="location.href='#contact';">Contact Me</button>
+            </div>
+        </div>
+        
+        <div class="info-cont" id="skills">
+            <h1>What I Do</h1>
+            <p>I'm a passionate <label class="fancy-text-game">Game Developer</label> with a love for immersive experiences and interactive entertainment. My journey into game development began with creating fun, small projects, and now I'm diving into larger, more complex games. When I'm not crafting games, I enjoy learning about <label class="fancy-text-dev">Web Development</label>, particularly working with ASP.NET to build robust web applications.</p>
+            
+            <div class="icon-container">
+                <div class="img-icon">
+                    <img src="images/godot.png" alt="Godot">
+                </div>
+                <div class="icon">
+                    <img src="images/csharp.png" alt="CSharp">
+                </div>
+                <div class="icon">
+                    <img src="images/cpp.png" alt="CPP">
+                </div>
+                <div class="icon">
+                    <img src="images/python.png" alt="Python">
+                </div>
+                <div class="icon">
+                    <img src="images/html-5.png" alt="HTML5">
+                </div>
+                <div class="icon">
+                    <img src="images/css3.png" alt="CSS3">
+                </div>
+                <div class="icon">
+                    <img src="images/aws.png" alt="AWS">
+                </div>
+                <div class="icon">
+                    <img src="images/azure.png" alt="Azure">
+                </div>
+                <div class="icon">
+                    <img src="images/linux.png" alt="Linux">
+                </div>
+                <div class="icon">
+                    <img src="images/bash.png" alt="Bash">
+                </div>
+                <div class="icon">
+                    <img src="images/nginx.png" alt="Nginx">
+                </div>
+                <div class="icon">
+                    <img src="images/arduino.png" alt="Arduino">
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <div class="info-cont" id="about">
+                <h1>Education</h1>
+                <div style="display: flex; flex-direction: row; align-items: flex-start; justify-content: center; margin-top: 20px;">
+                    <!--
+                    
+                    -->
+                    <img src="images/oku_logo.png" style="align-self: center; margin-right: 32px; border-radius: 10%; box-shadow: 0 1rem 5rem #0000004d" width="160"/>
+                    <div style="display: flex; flex-direction: column; align-self: center;">
+                        <label style="font-size: 24px;">Osmaniye Korkut Ata University</label>
+                        <label style="font-size: 24px; color: gray;">Bachelor of Science in Computer Engineering</label>
+                        <label style="font-size: 24px; color: gray;">October 2023 - January 2027</label>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="info-cont" id="contact">
+            <h1>Reach out to me!</h1>
+            <p>I'm always excited to connect and collaborate! Whether you have a project in mind, need assistance, or just want to chat about game development or web technologies, feel free to get in touch.</p>
+            
+            <button onclick="location.href='https://github.com/akoc1';" class="icon-button" style="font-size: 42px;"><i class="fa fa-github"></i></button>
+            <button onclick="location.href='https://www.linkedin.com/in/akoc1/';" class="icon-button" style="font-size: 42px;"><i class="fa fa-linkedin"></i></button>
+            <button onclick="location.href='mailto:akoclo19@gmail.com';" class="icon-button" style="font-size: 42px;"><i class="fa fa-envelope"></i></button>
+
+            <p>Looking forward to hearing from you!</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

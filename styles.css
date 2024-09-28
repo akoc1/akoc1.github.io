@@ -1,0 +1,204 @@
+@font-face {font-family: PoppinsBold; src: url('fonts/Poppins-Bold.ttf');}
+@font-face {font-family: PoppinsRegular; src: url('fonts/Poppins-Regular.ttf');}
+
+body {
+    background-color: white;
+    font-family: PoppinsRegular;
+    margin-bottom: 128px;
+  }
+
+  p{
+    font-size: 24px;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+
+  .profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+  }
+
+  .topnav {
+    overflow: hidden;
+    justify-content: flex-end;
+    background-color: white;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 24px;
+    transition: 0.2s;
+  }
+  
+  .topnav a:hover {
+    background-color: #f4f4f4;
+    color: black;
+  }
+
+  .icon {
+    display: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    .topnav a {
+      display: none;
+    }
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  .responsive {
+    position: relative;
+  }
+  
+  .responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  h1{
+    font-family: PoppinsRegular;
+  }
+
+  .fancy-text-game{
+    background: -webkit-linear-gradient(#00ddff, #f874ff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; 
+    background-clip: text;
+  }
+
+  .fancy-text-dev{
+    background: -webkit-linear-gradient(#ff005c, #ffff74);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; 
+    background-clip: text;
+  }
+
+  .header {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 5px 10px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .info-cont{
+    font-family: PoppinsRegular;
+    font-size: 36px;
+    padding: 50px;
+    text-align: center;
+    justify-content: center;
+  }
+
+.button-fancy {
+  background: #ff3b61;
+  border: 1px solid #ff3b61;
+  border-radius: 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: PoppinsBold;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  transition: 0.15s;
+}
+
+.button-fancy:hover,
+.button-fancy:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #ff3b61;
+}
+
+.button-fancy:active {
+  opacity: .5;
+}
+
+/* Tech Stack */
+.icon-container {
+    margin: 50px 0px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.img-icon {
+    font-size: 16px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.15s ease-in-out;
+}
+
+.img-icon img {
+    width: 60px;
+    transition: transform 0.15s ease-in-out;
+}
+
+.img-icon:hover img {
+    transform: scale(1.2);
+}
+
+.img-icon p {
+    margin-top: 10px;
+    color: #555;
+    text-align: center;
+}
+
+.img-icon:hover p {
+    color: #000;
+    font-weight: bold;
+}
+
+.icon-button{
+    margin-left: 4px;
+    margin-right: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon-button:hover{
+    transform: scale(1.15);
+}
