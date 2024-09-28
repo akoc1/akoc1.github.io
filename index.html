@@ -44,8 +44,19 @@
                 <h1>Hello world, I'm akoc1!</h1>
                 <p>A passionate <label class="fancy-text-dev">Full Stack Software</label> and <label class="fancy-text-game">Game Developer</label></p>
                 
-                <button class="button-fancy">Download My Resume</button>
+                <button class="button-fancy" onclick="downloadPDF()" download>Download My Resume</button>
                 <button class="button-fancy" onclick="location.href='#contact';">Contact Me</button>
+
+                <script>
+                    function downloadPDF() {
+                        const link = document.createElement('a');
+                        link.href = './static/resume.pdf';
+                        link.download = 'resume.pdf'; 
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }
+                </script>
             </div>
         </div>
         

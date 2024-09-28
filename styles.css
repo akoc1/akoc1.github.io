@@ -49,36 +49,6 @@ body {
     color: black;
   }
 
-  .hicon {
-    display: none;
-  }
-
-  @media screen and (max-width: 600px) {
-    .topnav a {
-      display: none;
-    }
-    .topnav a.hicon {
-      float: right;
-      display: block;
-    }
-  }
-  
-  .responsive {
-    position: relative;
-  }
-  
-  .responsive .hicon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  .responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
   h1{
     font-family: PoppinsRegular;
   }
