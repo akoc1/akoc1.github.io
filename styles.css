@@ -49,7 +49,7 @@ body {
     color: black;
   }
 
-  .icon {
+  .hicon {
     display: none;
   }
 
@@ -57,7 +57,7 @@ body {
     .topnav a {
       display: none;
     }
-    .topnav a.icon {
+    .topnav a.hicon {
       float: right;
       display: block;
     }
@@ -67,7 +67,7 @@ body {
     position: relative;
   }
   
-  .responsive .icon {
+  .responsive .hicon {
     position: absolute;
     right: 0;
     top: 0;
@@ -161,7 +161,7 @@ body {
     gap: 32px;
 }
 
-.img-icon {
+.icon {
     font-size: 16px;
     display: flex;
     text-align: center;
@@ -170,22 +170,22 @@ body {
     transition: transform 0.15s ease-in-out;
 }
 
-.img-icon img {
+.icon img {
     width: 60px;
     transition: transform 0.15s ease-in-out;
 }
 
-.img-icon:hover img {
+.icon:hover img {
     transform: scale(1.2);
 }
 
-.img-icon p {
+.icon p {
     margin-top: 10px;
     color: #555;
     text-align: center;
 }
 
-.img-icon:hover p {
+.icon:hover p {
     color: #000;
     font-weight: bold;
 }
