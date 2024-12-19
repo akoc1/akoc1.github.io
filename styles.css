@@ -49,6 +49,28 @@ body {
     color: black;
   }
 
+  @media screen and (max-width: 768px) {
+    .topnav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+
+    .topnav a {
+      float: none;
+      display: block;
+      width: 100%;
+      text-align: left;
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+    }
+  }
+
   h1{
     font-family: PoppinsRegular;
     font-size: 48px;
