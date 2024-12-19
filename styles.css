@@ -51,6 +51,7 @@ body {
 
   h1{
     font-family: PoppinsRegular;
+    font-size: 48px;
   }
 
   .fancy-text-game{
@@ -171,4 +172,49 @@ body {
 
 .icon-button:hover{
     transform: scale(1.15);
+}
+
+#repos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.repo-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0px 6px rgba(255, 59, 97, 0.2);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.repo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0px 12px rgba(255, 59, 97, 0.5);
+}
+.repo-card h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+.repo-card p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #666;
+}
+.repo-stats {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #444;
+}
+.repo-stats .stars::before {
+  content: "⭐";
+  color: crimson; /* Crimson color for the star */
+  margin-right: 5px;
 }
