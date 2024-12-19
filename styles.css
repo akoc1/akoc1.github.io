@@ -213,8 +213,3 @@ body {
   font-size: 14px;
   color: #444;
 }
-.repo-stats .stars::before {
-  content: "⭐";
-  color: crimson; /* Crimson color for the star */
-  margin-right: 5px;
-}
