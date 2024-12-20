@@ -12,7 +12,7 @@ async function fetchGitHubRepos() {
 
     const filteredRepos = repos.filter(repo => 
         repo.name !== "akoc1.github.io" &&
-        repo.name !== "akoc1"
+        repo.name !== "akoc1" && repo.name !== "Leo4Bey"
       );
 
     displayRepos(filteredRepos);
