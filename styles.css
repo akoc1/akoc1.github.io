@@ -49,27 +49,7 @@ body {
     color: black;
   }
 
-  @media screen and (max-width: 768px) {
-    .topnav {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 10px;
-    }
-
-    .topnav a {
-      float: none;
-      display: block;
-      width: 100%;
-      text-align: left;
-      font-size: 18px;
-      padding: 10px;
-    }
-
-    .topnav a:hover {
-      background-color: #ddd;
-    }
-  }
+  
 
   h1{
     font-family: PoppinsRegular;
@@ -152,6 +132,31 @@ body {
     display: flex;
     justify-content: center;
     gap: 32px;
+}
+
+.school-image {
+  align-self: center;
+    display: block;
+    max-width: 50%;
+    padding: 12px;
+    margin-right: 32px;
+    height: auto;
+    border-radius: 10%;
+    box-shadow: 0 1rem 5rem #0000004d;
+}
+
+.education-flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.education-text {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }
 
 .icon {
@@ -238,6 +243,101 @@ body {
 
 .repo-stats .stars::before {
   content: "⭐";
-  color: crimson; /* Crimson color for the star */
+  color: crimson;
   margin-right: 5px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-btn {
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.github {
+  background-color: #333;
+}
+
+.github:hover {
+  background-color: #555;
+}
+
+.email {
+  background-color: #0078d4;
+}
+
+.email:hover {
+  background-color: #005fa3;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.linkedin:hover {
+  background-color: #005582;
+}
+
+@media (max-width: 768px) {
+  .topnav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .topnav a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .topnav a:hover {
+    background-color: #ddd;
+  }
+
+  h1{
+    font-size: 36px;
+  }
+
+  p{
+    font-size: 18px;
+  }
+
+  label{
+    font-size: 18px;
+  }
+
+  .school-image{
+    width: 40%;
+  }
+
+    .education-flex-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .school-image {
+      margin-right: 0;
+      margin-bottom: 24px;
+      max-width: 70%;
+    }
+  
+    .education-text {
+      text-align: center;
+    }
 }
