@@ -1,0 +1,238 @@
+@font-face {
+    font-family: LexendRegular;
+    src: url('/resources/fonts/Lexend-Regular.ttf');
+}
+
+@font-face {
+    font-family: LexendBold;
+    src: url('/resources/fonts/Lexend-Bold.ttf');
+}
+
+@font-face {
+    font-family: FiraCodeRegular;
+    src: url('/resources/fonts/FiraCode-Regular.ttf');
+}
+
+@font-face {
+    font-family: FiraCodeBold;
+    src: url('/resources/fonts/FiraCode-Regular.ttf');
+}
+
+* {
+    font-family: 'LexendRegular', sans-serif;
+    font-size: 16px;
+}
+
+html {
+    scroll-behavior: smooth;
+    color: yellow;
+}
+
+html p {
+    color: #e7e7e7;
+    font-size: 24px;
+}
+
+::selection {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+body {
+    margin-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #141b52;
+    background: radial-gradient(circle at center top, rgb(135, 32, 158) 0%, rgba(0, 0, 0, 1) 90%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    overflow-x: hidden;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0px 0px 16px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 99;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 0.5rem;
+    /* Butonlar arası boşluk */
+}
+
+.glass-button {
+    background: transparent;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition:
+        background 0.3s ease,
+        backdrop-filter 0.3s ease,
+        -webkit-backdrop-filter 0.3s ease;
+}
+
+.glass-button:hover {
+    backdrop-filter: blur(12.1px);
+    -webkit-backdrop-filter: blur(12.1px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.glass-button:active {
+    background: rgba(255, 255, 255, 0.075);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-svg {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+.info-container {
+    text-align: center;
+    align-content: center;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    height: auto;
+    margin-bottom: 150px;
+    padding-left: 50px;
+    padding-right: 50px;
+    transition: opacity 0.5s ease;
+}
+
+.info-container h1 {
+    font-size: 48px;
+}
+
+.info-container h1 span {
+    font-size: 48px;
+}
+
+.info-container-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.info-container-title svg {
+    width: 4em;
+    height: 4em;
+}
+
+.info-container-title h1 {
+    user-select: none;
+}
+
+.godot { color: #4d90c1; font-weight: bold; }
+.csharp { color: #c72eea}
+.asp-net { color: #af5df6; }
+.mongo-db { color: #CE9178; }
+
+.code-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.code-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    display: block;
+    font-family: FiraCodeRegular;
+    background: rgba(31, 31, 31, 0.75);
+    border-radius: 8px;
+    border: 1px solid rgba(31, 31, 31, 1);
+    padding: 16px;
+    width: 50vw;
+    font-size: 1rem;
+    overflow-x: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    white-space: pre-wrap;
+    user-select: text;
+}
+
+.code-container span {
+    font-family: FiraCodeRegular;
+}
+
+.projects-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+.project-item {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+}
+
+.project-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 12px;
+}
+
+.project-item:hover {
+  transform: translateY(-6px);
+}
+
+.project-item h3 {
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+}
+
+.project-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
