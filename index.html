@@ -221,10 +221,7 @@
             class="project-item"
           >
             <div class="project-image">
-              <img
-                src="https://camo.githubusercontent.com/eb4dcb8e35d91da2696cbdc95c3362d606ef84fe92efd8489dd4f38975f3a5d9/68747470733a2f2f692e6962622e636f2f42484371743954582f3435323831383132322d65643763643035312d623862642d343738342d383465642d6466636237386266336530382e706e67"
-                alt="Multiplayer Chess"
-              />
+              <img src="images/chess.png" alt="Multiplayer Chess" />
             </div>
             <h3>Multiplayer Chess</h3>
             <p>
@@ -243,10 +240,7 @@
             class="project-item"
           >
             <div class="project-image">
-              <img
-                src="https://i.ibb.co/cSBQyHWV/349022617-3d550fae-6b10-401b-9ad9-f77916518663.png"
-                alt="Game Gate"
-              />
+              <img src="images/gg.png" alt="Game Gate" />
             </div>
             <h3>Game Gate</h3>
             <p>
@@ -263,7 +257,7 @@
             class="project-item"
           >
             <div class="project-image">
-              <img src="https://i.ibb.co/yFs2drdn/frytime.png" alt="Fry Time" />
+              <img src="images/frytime.png" alt="Fry Time" />
             </div>
             <h3>Fry Time</h3>
             <p>
@@ -280,10 +274,7 @@
             class="project-item"
           >
             <div class="project-image">
-              <img
-                src="https://i.ibb.co/xShFHtWM/382098274-0cf6a1df-7f7b-4636-bd7c-706957d7733d.png"
-                alt="Presentation Made Easy"
-              />
+              <img src="images/pme.png" alt="Presentation Made Easy" />
             </div>
             <h3>Presentation Made Easy</h3>
             <p>
@@ -301,10 +292,7 @@
             class="project-item"
           >
             <div class="project-image">
-              <img
-                src="https://i.ibb.co/ycW6GTWH/esenlik.png"
-                alt="Esenlik Sağlık Hizmetleri"
-              />
+              <img src="images/esenlik.png" alt="Esenlik Sağlık Hizmetleri" />
             </div>
             <h3>Esenlik Sağlık Hizmetleri</h3>
             <p>
@@ -322,10 +310,7 @@
             class="project-item"
           >
             <div class="project-image">
-              <img
-                src="https://i.ibb.co/HpMhT9j3/image.png"
-                alt="Tic Tac Toe"
-              />
+              <img src="images/tictactoe.png" alt="Tic Tac Toe" />
             </div>
             <h3>Tic Tac Toe</h3>
             <p>
@@ -343,10 +328,7 @@
             class="project-item"
           >
             <div class="project-image">
-              <img
-                src="https://img.itch.zone/aW1hZ2UvMTY2NDEwNS85Nzk0NTY2LnBuZw==/794x1000/1B4iLH.png"
-                alt="panzo"
-              />
+              <img src="images/panzo.png" alt="panzo" />
             </div>
             <h3>Panzo</h3>
             <p>
@@ -552,6 +534,16 @@
       document
         .querySelector(".hamburger")
         .setAttribute("aria-expanded", expanded);
+    });
+    const navButtons = document.querySelectorAll("#nav-menu button");
+
+    navButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        document.getElementById("nav-menu").classList.remove("active");
+        document
+          .querySelector(".hamburger")
+          .setAttribute("aria-expanded", false);
+      });
     });
   </script>
 </html>
