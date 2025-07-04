@@ -92,7 +92,6 @@ nav {
 .navigation-buttons {
     display: flex;
     gap: 0.5rem;
-    /* Butonlar arası boşluk */
 }
 
 .glass-button {
@@ -165,6 +164,17 @@ nav {
 
   .profile {
     flex: 1;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .school-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 }
 
@@ -296,7 +306,7 @@ nav {
   margin-top: 8px;
   font-size: 1rem;
   color: #eee;
-  word-wrap: break-word; /* Uzun kelimeler satır sonuna geçer */
+  word-wrap: break-word; /* Uzun kelimeler */
 }
 
 .projects-grid {
@@ -343,3 +353,9 @@ nav {
   color: #ccc;
 }
 
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
