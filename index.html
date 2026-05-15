@@ -1,270 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQCWRCKN2J"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-RQCWRCKN2J');
-  </script>
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>akoc1 | Software Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a14" />
+  <title>akoc1 // a small studio of one</title>
+  <meta name="description" content="Indie game developer. Small worlds built in Godot, with determination." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/72667213?v=4" />
 </head>
 
 <body>
 
-  <nav>
-    <a href="#" class="brand">
-      <img src="https://avatars.githubusercontent.com/u/72667213?v=4" width="32" height="32" style="border-radius: 50%;">
-      akoc1
-    </a>
-    <button class="hamburger" aria-label="Toggle Menu">&#9776;</button>
+  <!-- ============ SPRITE DEFINITIONS ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- 8x7 pixel HEART (Undertale soul) -->
+      <symbol id="i-heart" viewBox="0 0 8 7" shape-rendering="crispEdges">
+        <rect x="1" y="1" width="2" height="1"/>
+        <rect x="5" y="1" width="2" height="1"/>
+        <rect x="0" y="2" width="3" height="1"/>
+        <rect x="5" y="2" width="3" height="1"/>
+        <rect x="0" y="3" width="8" height="1"/>
+        <rect x="1" y="4" width="6" height="1"/>
+        <rect x="2" y="5" width="4" height="1"/>
+        <rect x="3" y="6" width="2" height="1"/>
+      </symbol>
 
-    <div class="nav-links" id="nav-menu">
-      <button class="nav-link" onclick="scrollToId('skills')">
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m21 7.5-2.25-1.313M21 7.5v2.25m0-2.25-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3 2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75 2.25-1.313M12 21.75V19.5m0 2.25-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" />
-        </svg>
-        <span>Skills</span>
-      </button>
+      <!-- 9x10 pixel STRAWBERRY (Celeste) -->
+      <symbol id="i-berry" viewBox="0 0 9 10" shape-rendering="crispEdges">
+        <!-- leaves -->
+        <rect x="3" y="0" width="1" height="1" fill="#7bc043"/>
+        <rect x="2" y="1" width="3" height="1" fill="#7bc043"/>
+        <rect x="5" y="1" width="2" height="1" fill="#56a832"/>
+        <rect x="4" y="0" width="1" height="1" fill="#7bc043"/>
+        <!-- body -->
+        <rect x="1" y="2" width="7" height="1" fill="#ff4d6d"/>
+        <rect x="0" y="3" width="9" height="1" fill="#ff4d6d"/>
+        <rect x="0" y="4" width="9" height="1" fill="#ff4d6d"/>
+        <rect x="1" y="5" width="7" height="1" fill="#ff4d6d"/>
+        <rect x="2" y="6" width="5" height="1" fill="#ff4d6d"/>
+        <rect x="3" y="7" width="3" height="1" fill="#ff4d6d"/>
+        <rect x="4" y="8" width="1" height="1" fill="#ff4d6d"/>
+        <!-- seeds (yellow) -->
+        <rect x="2" y="3" width="1" height="1" fill="#ffe066"/>
+        <rect x="6" y="3" width="1" height="1" fill="#ffe066"/>
+        <rect x="4" y="4" width="1" height="1" fill="#ffe066"/>
+        <rect x="2" y="5" width="1" height="1" fill="#ffe066"/>
+        <rect x="6" y="5" width="1" height="1" fill="#ffe066"/>
+      </symbol>
 
-      <button class="nav-link" onclick="scrollToId('projects')">
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-        </svg>
-        <span>Projects</span>
-      </button>
+      <!-- 9x9 pixel STAR (UT save point) -->
+      <symbol id="i-star" viewBox="0 0 9 9" shape-rendering="crispEdges">
+        <rect x="4" y="0" width="1" height="1"/>
+        <rect x="3" y="1" width="3" height="1"/>
+        <rect x="0" y="3" width="9" height="1"/>
+        <rect x="1" y="4" width="7" height="1"/>
+        <rect x="2" y="5" width="5" height="1"/>
+        <rect x="1" y="6" width="2" height="1"/>
+        <rect x="6" y="6" width="2" height="1"/>
+        <rect x="0" y="7" width="2" height="1"/>
+        <rect x="7" y="7" width="2" height="1"/>
+      </symbol>
 
-      <button class="nav-link" onclick="scrollToId('about')">
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-        </svg>
-        <span>About</span>
-      </button>
+      <!-- 8x8 CRYSTAL HEART (Celeste) -->
+      <symbol id="i-crystal" viewBox="0 0 8 8" shape-rendering="crispEdges">
+        <rect x="3" y="0" width="2" height="1" fill="#a6e3ff"/>
+        <rect x="2" y="1" width="4" height="1" fill="#7fd0ff"/>
+        <rect x="1" y="2" width="6" height="1" fill="#4ab6ff"/>
+        <rect x="0" y="3" width="8" height="1" fill="#3aa0e8"/>
+        <rect x="1" y="4" width="6" height="1" fill="#3aa0e8"/>
+        <rect x="2" y="5" width="4" height="1" fill="#2c80c0"/>
+        <rect x="3" y="6" width="2" height="1" fill="#2c80c0"/>
+        <!-- shine -->
+        <rect x="2" y="2" width="1" height="1" fill="#eaf6ff"/>
+        <rect x="3" y="3" width="1" height="1" fill="#eaf6ff"/>
+      </symbol>
 
-      <button class="nav-link" onclick="scrollToId('contact')">
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-        </svg>
-        <span>Contact</span>
-      </button>
+      <!-- Madeline-ish pixel sprite (6x10) -->
+      <symbol id="i-sprite" viewBox="0 0 6 10" shape-rendering="crispEdges">
+        <!-- hair (red) -->
+        <rect x="1" y="0" width="4" height="1" fill="#ff4d6d"/>
+        <rect x="0" y="1" width="5" height="1" fill="#ff4d6d"/>
+        <rect x="0" y="2" width="5" height="1" fill="#ff4d6d"/>
+        <!-- face -->
+        <rect x="1" y="3" width="3" height="1" fill="#f0c8a0"/>
+        <rect x="1" y="4" width="3" height="1" fill="#f0c8a0"/>
+        <rect x="2" y="3" width="1" height="1" fill="#1a1a2e"/>
+        <!-- body (blue jacket) -->
+        <rect x="1" y="5" width="3" height="1" fill="#3aa0e8"/>
+        <rect x="0" y="6" width="5" height="1" fill="#3aa0e8"/>
+        <rect x="1" y="7" width="3" height="1" fill="#2c80c0"/>
+        <!-- legs (pants) -->
+        <rect x="1" y="8" width="1" height="1" fill="#2a2a40"/>
+        <rect x="3" y="8" width="1" height="1" fill="#2a2a40"/>
+        <rect x="1" y="9" width="1" height="1" fill="#2a2a40"/>
+        <rect x="3" y="9" width="1" height="1" fill="#2a2a40"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ BOOT OVERLAY ============ -->
+  <div id="boot" class="boot">
+    <div class="boot-inner">
+      <svg class="boot-heart" width="64" height="56"><use href="#i-heart" fill="#ff2d2d"/></svg>
+      <pre class="boot-log" id="bootLog"></pre>
+      <div class="boot-skip">[ press Z / click / any key to skip ]</div>
     </div>
+  </div>
+
+  <!-- ============ AMBIENT LAYERS ============ -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
+  <!-- Soul-heart cursor -->
+  <svg class="cursor-soul" id="cursorSoul" width="22" height="20" aria-hidden="true">
+    <use href="#i-heart" fill="#ff2d2d"/>
+  </svg>
+
+  <!-- floating berries / dust particles -->
+  <div class="floaters" id="floaters" aria-hidden="true"></div>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <a href="#hero" class="brand" data-cursor="pointer">
+      <svg width="16" height="14"><use href="#i-heart" fill="currentColor"/></svg>
+      <span>akoc<span class="accent">1</span></span>
+      <span class="brand-sub">a small studio of one</span>
+    </a>
+    <div class="topbar-meta">
+      <span class="hud">
+        <img class="berry-img" src="images/Strawberry.webp" alt="" width="16" height="18">
+        <span id="berryCount">0</span>/7
+      </span>
+      <span class="status"><span class="status-dot"></span>online</span>
+      <span class="clock" id="clock">--:--:--</span>
+    </div>
+  </header>
+
+  <!-- ============ SAVE POINT (corner) ============ -->
+  <button class="save-point" id="savePoint" data-cursor="pointer" aria-label="Save point">
+    <svg width="22" height="22"><use href="#i-star" fill="#ffd23f"/></svg>
+    <span class="save-label">save</span>
+  </button>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero">
+      <!-- Celeste-style pixel mountain backdrop -->
+      <div class="mountain" aria-hidden="true">
+        <svg viewBox="0 0 1200 400" preserveAspectRatio="none" shape-rendering="crispEdges">
+          <!-- back layer -->
+          <polygon points="0,400 0,260 120,180 240,240 360,160 500,220 640,140 780,200 920,160 1050,220 1200,170 1200,400" fill="#1f1a36"/>
+          <!-- middle -->
+          <polygon points="0,400 0,300 100,240 220,280 340,210 470,270 600,200 740,260 880,220 1020,280 1200,230 1200,400" fill="#2a2148"/>
+          <!-- front -->
+          <polygon points="0,400 0,340 80,290 200,330 320,270 460,330 600,280 750,340 900,290 1050,340 1200,300 1200,400" fill="#3a2b5e"/>
+          <!-- summit -->
+          <polygon points="540,400 540,160 600,100 660,160 660,400" fill="#5a3e8a"/>
+          <polygon points="580,160 600,100 620,160" fill="#e8eaf6"/>
+          <polygon points="585,180 600,140 615,180" fill="#fff"/>
+        </svg>
+      </div>
+
+      <div class="stars" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-meta">
+          <svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>BUILD 2026.05</span>
+          <span class="bar"></span>
+          <span>SAVE FILE 01</span>
+          <span class="bar"></span>
+          <span>PLAYTIME ∞</span>
+        </div>
+
+        <h1 class="title">
+          <span class="title-line">
+            <span class="title-word">A&nbsp;SMALL</span>
+          </span>
+          <span class="title-line">
+            <span class="title-word glitch" data-text="STUDIO">STUDIO</span>
+          </span>
+          <span class="title-line">
+            <span class="title-word">OF&nbsp;<span class="accent-text">ONE</span>.</span>
+          </span>
+        </h1>
+
+        <div class="dialog-box hero-dialog">
+          <div class="dialog-name">
+            <svg width="16" height="14"><use href="#i-heart" fill="#ff2d2d"/></svg>
+            <span>* AKOC1</span>
+          </div>
+          <p class="dialog-line">
+            <span class="ast">*</span>
+            <span id="typewriter"></span><span class="caret">▌</span>
+          </p>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#works" class="btn primary" data-cursor="pointer">
+            <span class="kbd-z">Z</span>
+            <span>SEE THE WORKS</span>
+          </a>
+          <a href="#contact" class="btn ghost" data-cursor="pointer">
+            <span class="kbd-z">X</span>
+            <span>SAY HELLO</span>
+          </a>
+        </div>
+
+        <div class="hero-marks">
+          <div class="mark">
+            <span class="mark-num">07+</span>
+            <span class="mark-lbl">SHIPPED<br>BUILDS</span>
+          </div>
+          <div class="mark">
+            <span class="mark-num">04</span>
+            <span class="mark-lbl">YEARS<br>CLIMBING</span>
+          </div>
+          <div class="mark">
+            <span class="mark-num">∞</span>
+            <span class="mark-lbl">CUPS OF<br>COFFEE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player avatar standing on a ledge -->
+      <div class="pixel-actor" aria-hidden="true">
+        <div class="actor-photo-wrap">
+          <img class="actor-photo" src="https://avatars.githubusercontent.com/u/72667213?v=4" alt="">
+          <span class="actor-tag">P1</span>
+        </div>
+        <div class="ledge"></div>
+      </div>
+
+      <div class="hero-scroll">
+        <span>SCROLL ↓</span>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section id="stack" class="stack">
+      <div class="section-head">
+        <span class="section-tag">
+          <svg width="12" height="11"><use href="#i-heart" fill="currentColor"/></svg>
+          01 // STACK
+        </span>
+        <h2 class="section-title">The <span class="accent-text">tools</span> on the belt.</h2>
+        <p class="section-sub">* Press [ACT] to inspect.</p>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>GODOT</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>C#</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>GDSCRIPT</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>MONOGAME</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>SHADERS</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>PYTHON</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>ASP.NET</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>WINUI</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>MONGODB</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>PROTOBUF</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>GIT</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <!-- dup -->
+          <span>GODOT</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>C#</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>GDSCRIPT</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>MONOGAME</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>SHADERS</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>PYTHON</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>ASP.NET</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>WINUI</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>MONGODB</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>PROTOBUF</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+          <span>GIT</span><svg width="10" height="9"><use href="#i-heart" fill="#ff2d2d"/></svg>
+        </div>
+      </div>
+
+      <div class="stack-grid">
+        <article class="stack-card" data-tilt data-cursor="pointer">
+          <div class="stack-card-top">
+            <span class="stack-card-num">/01</span>
+            <svg class="stack-card-icon" width="20" height="20"><use href="#i-heart" fill="#ff4d6d"/></svg>
+          </div>
+          <h3>Game Dev</h3>
+          <p>Designing systems, mechanics, the feel of play. Mostly in <b>Godot</b> with <b>C#</b> and <b>GDScript</b>. Network sync via Protocol Buffers.</p>
+          <ul>
+            <li>Godot 4 / 3</li>
+            <li>C# &amp; GDScript</li>
+            <li>Shaders (GLSL)</li>
+            <li>MonoGame</li>
+          </ul>
+        </article>
+
+        <article class="stack-card" data-tilt data-cursor="pointer">
+          <div class="stack-card-top">
+            <span class="stack-card-num">/02</span>
+            <img class="stack-card-icon berry-img" src="images/Strawberry.webp" alt="" width="22" height="24">
+          </div>
+          <h3>Apps &amp; Web</h3>
+          <p>Polished desktop tools and production web apps. Native <b>WinUI</b> on Windows, <b>ASP.NET Core</b> on the server, <b>MongoDB</b> behind it.</p>
+          <ul>
+            <li>ASP.NET Core</li>
+            <li>WinUI 3</li>
+            <li>MongoDB / REST</li>
+            <li>HTML &amp; CSS</li>
+          </ul>
+        </article>
+
+        <article class="stack-card" data-tilt data-cursor="pointer">
+          <div class="stack-card-top">
+            <span class="stack-card-num">/03</span>
+            <svg class="stack-card-icon" width="20" height="20"><use href="#i-crystal"/></svg>
+          </div>
+          <h3>Mindset</h3>
+          <p>Curious by default. Ship small, learn fast, polish later. Comfortable owning a project from blank canvas to "press start".</p>
+          <ul>
+            <li>Problem solving</li>
+            <li>Game feel &amp; UX</li>
+            <li>Clean architecture</li>
+            <li>Stubborn debugging</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ WORKS ============ -->
+    <section id="works" class="works">
+      <div class="section-head">
+        <span class="section-tag">
+          <svg width="12" height="11"><use href="#i-heart" fill="currentColor"/></svg>
+          02 // WORKS
+        </span>
+        <h2 class="section-title">Selected <span class="accent-text">builds</span>.</h2>
+        <p class="section-sub">* Each one was a tiny climb. * Click any to open the source or the live build.</p>
+      </div>
+
+      <div class="works-grid">
+
+        <a href="https://github.com/akoc1/multiplayer-chess" target="_blank" rel="noopener" class="work big" data-tilt data-cursor="pointer" data-berry>
+          <div class="work-img"><img src="images/chess.png" alt=""></div>
+          <div class="work-info">
+            <div class="work-meta">
+              <span class="work-id">/work_01</span>
+              <span class="work-type">GAME · NETWORK</span>
+            </div>
+            <h3>Multiplayer Chess</h3>
+            <p>Real-time chess over the network. Two players, low-latency sync via Protocol Buffers.</p>
+            <div class="work-tags">
+              <span>Godot</span><span>C#</span><span>Protobuf</span>
+            </div>
+          </div>
+          <span class="work-berry" aria-hidden="true"><img class="berry-img" src="images/Strawberry.webp" alt="" width="22" height="24"></span>
+        </a>
+
+        <a href="https://akoc1.itch.io/panzo" target="_blank" rel="noopener" class="work" data-tilt data-cursor="pointer" data-berry>
+          <div class="work-img"><img src="images/panzo.png" alt=""></div>
+          <div class="work-info">
+            <div class="work-meta">
+              <span class="work-id">/work_02</span>
+              <span class="work-type">GAME JAM</span>
+            </div>
+            <h3>Panzo</h3>
+            <p>Puzzle-platformer made for Wowie Jam 4.</p>
+            <div class="work-tags"><span>Godot</span><span>GDScript</span></div>
+          </div>
+          <span class="work-berry" aria-hidden="true"><img class="berry-img" src="images/Strawberry.webp" alt="" width="22" height="24"></span>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.peacefulroute.tictactoe" target="_blank" rel="noopener" class="work" data-tilt data-cursor="pointer" data-berry>
+          <div class="work-img"><img src="images/tictactoe.png" alt=""></div>
+          <div class="work-info">
+            <div class="work-meta">
+              <span class="work-id">/work_03</span>
+              <span class="work-type">MOBILE · PLAY STORE</span>
+            </div>
+            <h3>Tic Tac Toe</h3>
+            <p>Classic, polished, shipped on Android.</p>
+            <div class="work-tags"><span>Godot</span><span>Android</span></div>
+          </div>
+          <span class="work-berry" aria-hidden="true"><img class="berry-img" src="images/Strawberry.webp" alt="" width="22" height="24"></span>
+        </a>
+
+        <a href="https://github.com/akoc1/GameGate" target="_blank" rel="noopener" class="work tall" data-tilt data-cursor="pointer" data-berry>
+          <div class="work-img"><img src="images/gg.png" alt=""></div>
+          <div class="work-info">
+            <div class="work-meta">
+              <span class="work-id">/work_04</span>
+              <span class="work-type">DESKTOP TOOL</span>
+            </div>
+            <h3>Game Gate</h3>
+            <p>A minimalist game launcher for Windows. Native UI, fast cold start.</p>
+            <div class="work-tags"><span>WinUI</span><span>C#</span></div>
+          </div>
+          <span class="work-berry" aria-hidden="true"><img class="berry-img" src="images/Strawberry.webp" alt="" width="22" height="24"></span>
+        </a>
+
+        <a href="https://frytime.com.tr/" target="_blank" rel="noopener" class="work" data-tilt data-cursor="pointer" data-berry>
+          <div class="work-img"><img src="images/frytime.png" alt=""></div>
+          <div class="work-info">
+            <div class="work-meta">
+              <span class="work-id">/work_05</span>
+              <span class="work-type">WEB · COMMERCIAL</span>
+            </div>
+            <h3>Fry Time</h3>
+            <p>Restaurant info site, live in production.</p>
+            <div class="work-tags"><span>ASP.NET</span><span>C#</span></div>
+          </div>
+          <span class="work-berry" aria-hidden="true"><img class="berry-img" src="images/Strawberry.webp" alt="" width="22" height="24"></span>
+        </a>
+
+        <a href="https://www.polatliatomserum.com/" target="_blank" rel="noopener" class="work" data-tilt data-cursor="pointer" data-berry>
+          <div class="work-img"><img src="images/esenlik.png" alt=""></div>
+          <div class="work-info">
+            <div class="work-meta">
+              <span class="work-id">/work_06</span>
+              <span class="work-type">WEB · COMMERCIAL</span>
+            </div>
+            <h3>Esenlik Health</h3>
+            <p>Health institution platform. ASP.NET &amp; MongoDB stack.</p>
+            <div class="work-tags"><span>ASP.NET</span><span>MongoDB</span></div>
+          </div>
+          <span class="work-berry" aria-hidden="true"><img class="berry-img" src="images/Strawberry.webp" alt="" width="22" height="24"></span>
+        </a>
+
+        <a href="https://github.com/akoc1/PresentationMadeEasy" target="_blank" rel="noopener" class="work wide" data-tilt data-cursor="pointer" data-berry>
+          <div class="work-img"><img src="images/pme.png" alt=""></div>
+          <div class="work-info">
+            <div class="work-meta">
+              <span class="work-id">/work_07</span>
+              <span class="work-type">DESKTOP UTILITY</span>
+            </div>
+            <h3>Presentation Made Easy</h3>
+            <p>Tiny utility that turns presenting into a keyboard-friendly remote — slip between sections without breaking flow.</p>
+            <div class="work-tags"><span>WinUI</span><span>C#</span></div>
+          </div>
+          <span class="work-berry" aria-hidden="true"><img class="berry-img" src="images/Strawberry.webp" alt="" width="22" height="24"></span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section id="stats" class="stats">
+      <div class="section-head">
+        <span class="section-tag">
+          <svg width="12" height="11"><use href="#i-heart" fill="currentColor"/></svg>
+          03 // STATS
+        </span>
+        <h2 class="section-title">Player <span class="accent-text">profile</span>.</h2>
+        <p class="section-sub">* You feel your determination growing.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stats-card">
+          <div class="stats-corner tl"></div><div class="stats-corner tr"></div>
+          <div class="stats-corner bl"></div><div class="stats-corner br"></div>
+
+          <div class="stats-header">
+            <div class="stats-avatar">
+              <img src="https://avatars.githubusercontent.com/u/72667213?v=4" alt="">
+              <span class="stats-level">LV 24</span>
+            </div>
+            <div>
+              <h3 class="stats-name">akoc1</h3>
+              <p class="stats-class">* CLASS: GAME DEV / ENGINEER</p>
+              <p class="stats-bio">Computer Engineering student who keeps a Godot project open in another window. Likes the moment a system finally feels right.</p>
+            </div>
+          </div>
+
+          <div class="stats-bars">
+            <div class="bar-row"><span>HP</span><div class="bar"><i style="--v:92%"></i></div><b>92/100</b></div>
+            <div class="bar-row"><span>ATK</span><div class="bar"><i style="--v:88%"></i></div><b>88/100</b></div>
+            <div class="bar-row"><span>DEF</span><div class="bar"><i style="--v:78%"></i></div><b>78/100</b></div>
+            <div class="bar-row"><span>MAGIC</span><div class="bar"><i style="--v:80%"></i></div><b>80/100</b></div>
+            <div class="bar-row"><span>SPD</span><div class="bar"><i style="--v:70%"></i></div><b>70/100</b></div>
+          </div>
+
+          <div class="stats-footer">
+            <span>* Equipped:</span>
+            <span class="equip">Determination</span>
+            <span class="equip">Mountain Boots</span>
+            <span class="equip">Cracked IDE</span>
+          </div>
+        </div>
+
+        <div class="stats-side">
+          <div class="quest">
+            <div class="quest-head">
+              <span class="quest-tag">// CAMPAIGN</span>
+              <span class="quest-label">Education</span>
+            </div>
+            <div class="quest-item">
+              <img src="images/osm.png" alt="">
+              <div>
+                <h4>Osmaniye Korkut Ata University</h4>
+                <p>B.Sc. Computer Engineering</p>
+              </div>
+            </div>
+            <div class="quest-item">
+              <img src="images/pg.jpg" alt="">
+              <div>
+                <h4>Politechnika Gdańska</h4>
+                <p>Erasmus+ Exchange · Poland</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="quest">
+            <div class="quest-head">
+              <span class="quest-tag">// INVENTORY</span>
+              <span class="quest-label">What I bring</span>
+            </div>
+            <ul class="perks">
+              <li><svg width="10" height="9"><use href="#i-heart" fill="#ff4d6d"/></svg> Ship-it-and-iterate mentality</li>
+              <li><img class="berry-img" src="images/Strawberry.webp" alt="" width="14" height="16"> Comfortable from gameplay to API</li>
+              <li><svg width="10" height="10"><use href="#i-star" fill="#ffd23f"/></svg> Treats UX as part of the engineering</li>
+              <li><svg width="10" height="10"><use href="#i-crystal"/></svg> Reads more than they write (sometimes)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="contact">
+      <div class="section-head">
+        <span class="section-tag">
+          <svg width="12" height="11"><use href="#i-heart" fill="currentColor"/></svg>
+          04 // CONTACT
+        </span>
+        <h2 class="section-title">Let's <span class="accent-text">build</span> something.</h2>
+        <p class="section-sub">* Got a game idea, a contract, or just want to talk about Godot quirks? Drop a line.</p>
+      </div>
+
+      <!-- Undertale-style dialog box -->
+      <div class="dialog-big">
+        <div class="dialog-corner tl"></div><div class="dialog-corner tr"></div>
+        <div class="dialog-corner bl"></div><div class="dialog-corner br"></div>
+
+        <div class="dialog-avatar">
+          <img class="dialog-photo" src="https://avatars.githubusercontent.com/u/72667213?v=4" alt="akoc1">
+          <span class="dialog-photo-tag">* ARIF</span>
+        </div>
+
+        <div class="dialog-content">
+          <p><span class="ast">*</span> Howdy! I'm Arif.</p>
+          <p><span class="ast">*</span> I make small games and the occasional commercial app.</p>
+          <p><span class="ast">*</span> If you'd like to work together, send a line:</p>
+          <p class="dialog-links">
+            <a href="mailto:akoclo19@gmail.com" data-cursor="pointer">akoclo19@gmail.com</a> ·
+            <a href="https://github.com/akoc1" target="_blank" rel="noopener" data-cursor="pointer">github.com/akoc1</a> ·
+            <a href="https://www.linkedin.com/in/akoc1/" target="_blank" rel="noopener" data-cursor="pointer">linkedin.com/in/akoc1</a> ·
+            <a href="https://akoc1.itch.io/" target="_blank" rel="noopener" data-cursor="pointer">akoc1.itch.io</a>
+          </p>
+          <p class="dialog-prompt">
+            <svg width="14" height="12"><use href="#i-heart" fill="#ff2d2d"/></svg>
+            <span class="opt selected">SEND</span>
+            <span class="opt"><a href="https://github.com/akoc1" target="_blank" rel="noopener" data-cursor="pointer">GITHUB</a></span>
+            <span class="opt"><a href="https://www.linkedin.com/in/akoc1/" target="_blank" rel="noopener" data-cursor="pointer">LINKEDIN</a></span>
+            <span class="opt"><a href="https://akoc1.itch.io/" target="_blank" rel="noopener" data-cursor="pointer">ITCH.IO</a></span>
+          </p>
+        </div>
+      </div>
+
+      <a href="mailto:akoclo19@gmail.com" class="btn primary big-cta" data-cursor="pointer">
+        <span class="kbd-z">Z</span>
+        <span>SEND EMAIL</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ============ BATTLE MENU NAV (bottom) ============ -->
+  <nav class="battle-menu" aria-label="Section navigation">
+    <a href="#stack"   class="bm" data-cursor="pointer">
+      <svg width="14" height="12"><use href="#i-heart" fill="currentColor"/></svg>
+      <span>ACT</span>
+    </a>
+    <a href="#works"   class="bm" data-cursor="pointer">
+      <svg width="14" height="12"><use href="#i-heart" fill="currentColor"/></svg>
+      <span>FIGHT</span>
+    </a>
+    <a href="#stats"   class="bm" data-cursor="pointer">
+      <svg width="14" height="12"><use href="#i-heart" fill="currentColor"/></svg>
+      <span>ITEM</span>
+    </a>
+    <a href="#contact" class="bm" data-cursor="pointer">
+      <svg width="14" height="12"><use href="#i-heart" fill="currentColor"/></svg>
+      <span>MERCY</span>
+    </a>
   </nav>
 
-  <section id="welcoming" class="container">
-    <h1>
-      <span class="code-font">></span>Hello world!
-    </h1>
-    <p>
-      I'm a <span class="accent-text">Computer Engineering</span> student with a passion for problem solving.
-      Building games and scalable applications.
-    </p>
-  </section>
-
-  <section id="skills" class="container">
-    <div class="section-title">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-2.25-1.313M21 7.5v2.25m0-2.25-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3 2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75 2.25-1.313M12 21.75V19.5m0 2.25-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" />
-      </svg>
-      <h2>Skills</h2>
+  <footer class="footer">
+    <div class="footer-quote">
+      <p>"* Despite everything, it's still you."</p>
+      <p>"* Take a deep breath. It's just a portfolio."</p>
     </div>
-
-    <p>A game developer focused on creating immersive and interactive experiences. Started with small projects and now works on larger, more complex games. Also interested in desktop application development and web-based solutions.</p>
-
-    <div class="code-wrapper">
-        <div><span class="c-kwd">public</span> <span class="c-kwd">class</span> <span class="c-cls">Developer</span></div>
-        <div>{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kwd">public</span> <span class="c-kwd">string</span> Name => <span class="c-str">"akoc1"</span><span class="c-punc">;</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kwd">public</span> <span class="c-kwd">string</span>[] Skills => <span class="c-kwd">new</span>[]</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"C#"</span><span class="c-punc">,</span> <span class="c-str">"Godot"</span><span class="c-punc">,</span> <span class="c-str">"MonoGame"</span><span class="c-punc">,</span> <span class="c-str">"Python"</span><span class="c-punc">,</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"ASP.NET Core"</span><span class="c-punc">,</span> <span class="c-str">"WinUI"</span><span class="c-punc">,</span> <span class="c-str">"MongoDB"</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;}<span class="c-punc">;</span></div>
-        <br>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kwd">public</span> <span class="c-kwd">void</span> <span class="c-mth">Build</span>()</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;{</div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-cls">Console</span>.<span class="c-mth">WriteLine</span>(<span class="c-str">"Creating the future."</span>)<span class="c-punc">;</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-        <div>}</div>
+    <div class="footer-grid">
+      <div>© 2026</div>
+      <div class="footer-hint">↑↑↓↓←→←→BA — STAY DETERMINED</div>
+      <div>HANDCRAFTED</div>
     </div>
-  </section>
+  </footer>
 
-  <section id="projects" class="container">
-    <div class="section-title">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-      </svg>
-      <h2>Projects</h2>
-    </div>
+  <!-- Easter egg overlay -->
+  <div class="easter" id="easter">
+    <pre>
++------------------------------+
+|   CHEAT CODE: ACTIVATED      |
+|   * YOU FEEL FILLED WITH     |
+|     EVEN MORE DETERMINATION. |
+|                              |
+|       <3  thank you  <3      |
++------------------------------+
+    </pre>
+  </div>
 
-    <div class="projects-grid">
-      <a href="https://github.com/akoc1/multiplayer-chess" target="_blank" class="project-card">
-        <div class="project-img-wrapper">
-          <img src="images/chess.png" alt="Multiplayer Chess">
-        </div>
-        <div class="project-content">
-          <h3>Multiplayer Chess</h3>
-          <p>Real-time chess game allowing two players to compete over network. Built with <span class="tech-tag">Godot</span>, <span class="tech-tag">C#</span> and Protocol Buffers.</p>
-        </div>
-      </a>
+  <!-- toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-      <a href="https://github.com/akoc1/GameGate" target="_blank" class="project-card">
-        <div class="project-img-wrapper">
-          <img src="images/gg.png" alt="Game Gate">
-        </div>
-        <div class="project-content">
-          <h3>Game Gate</h3>
-          <p>A minimalist game launcher application created for Windows using the <span class="tech-tag">WinUI</span> framework.</p>
-        </div>
-      </a>
-
-      <a href="https://frytime.com.tr/" target="_blank" class="project-card">
-        <div class="project-img-wrapper">
-          <img src="images/frytime.png" alt="Fry Time">
-        </div>
-        <div class="project-content">
-          <h3>Fry Time</h3>
-          <p>A commercial restaurant information website developed with <span class="tech-tag">ASP.NET</span> and <span class="tech-tag">C#</span>.</p>
-        </div>
-      </a>
-
-      <a href="https://github.com/akoc1/PresentationMadeEasy" target="_blank" class="project-card">
-        <div class="project-img-wrapper">
-          <img src="images/pme.png" alt="Presentation Made Easy">
-        </div>
-        <div class="project-content">
-          <h3>Presentation Made Easy</h3>
-          <p>A utility tool that allows users to easily navigate between sections while giving a presentation. Built with <span class="tech-tag">WinUI</span>.</p>
-        </div>
-      </a>
-
-      <a href="https://www.polatliatomserum.com/" target="_blank" class="project-card">
-        <div class="project-img-wrapper">
-          <img src="images/esenlik.png" alt="Esenlik Sağlık">
-        </div>
-        <div class="project-content">
-          <h3>Esenlik Health Services</h3>
-          <p>Commercial health institution website. Powered by <span class="tech-tag">ASP.NET</span>, <span class="tech-tag">MongoDB</span> and <span class="tech-tag">C#</span>.</p>
-        </div>
-      </a>
-
-      <a href="https://play.google.com/store/apps/details?id=com.peacefulroute.tictactoe" target="_blank" class="project-card">
-        <div class="project-img-wrapper">
-          <img src="images/tictactoe.png" alt="Tic Tac Toe">
-        </div>
-        <div class="project-content">
-          <h3>Tic Tac Toe</h3>
-          <p>Classic Tic Tac Toe game for Android devices. Published on Play Store. Developed with <span class="tech-tag">Godot</span>.</p>
-        </div>
-      </a>
-
-      <a href="https://akoc1.itch.io/panzo" target="_blank" class="project-card">
-        <div class="project-img-wrapper">
-          <img src="images/panzo.png" alt="Panzo">
-        </div>
-        <div class="project-content">
-          <h3>Panzo</h3>
-          <p>A puzzle-platformer game created for Wowie Jam 4. Developed using <span class="tech-tag">Godot</span> and <span class="tech-tag">GDScript</span>.</p>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section id="about" class="container">
-    <div class="section-title">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-      </svg>
-      <h2>About</h2>
-    </div>
-
-    <div class="school-list">
-      <div class="school-item">
-        <img src="images/osm.png" alt="Osmaniye Korkut Ata University" class="school-img">
-        <div>
-          <h3>Osmaniye Korkut Ata University</h3>
-          <p style="color: var(--text-secondary);">Bachelor of Science in Computer Engineering</p>
-        </div>
-      </div>
-      <div class="school-item">
-        <img src="images/pg.jpg" alt="Politechnika Gdańska" class="school-img">
-        <div>
-          <h3>Politechnika Gdańska</h3>
-          <p style="color: var(--text-secondary);">Erasmus+ Exchange Program</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="container">
-    <div class="section-title">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-      </svg>
-      <h2>Contact</h2>
-    </div>
-    <p>Whether you have a project in mind, need assistance, or just want to chat about game development, feel free to get in touch.</p>
-
-    <div class="contact-actions">
-        <a href="https://github.com/akoc1" target="_blank" class="btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                <path d="M9 18c-4.51 2-5-2-7-2"></path>
-            </svg>
-            GitHub
-        </a>
-
-        <a href="https://www.linkedin.com/in/akoc1/" target="_blank" class="btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-            LinkedIn
-        </a>
-
-        <button onclick="sendMail()" class="btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-            </svg>
-            Email Me
-        </button>
-    </div>
-  </section>
-
-  <script>
-    function sendMail() {
-      window.location.href = `mailto:akoclo19@gmail.com?subject=Hello&body=Let's connect!`;
-    }
-
-    // Smooth Scroll & Mobile Menu Close
-    function scrollToId(id) {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        document.getElementById('nav-menu').classList.remove('active');
-      }
-    }
-
-    // Hamburger Logic
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
